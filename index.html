@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Conversor de Arquivos</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container ">
+        <h1 class="text-center pt-5 pb-4">Conversor de Aquivos</h1>
+        <h2 class="text-center pt-2 pb-4">Selecione o formato do arquivo e para qual formato deseja converte-lo!</h2>
+
+        <div class="d-flex flex-row justify-content-center my-5">
+            <select name="typeFile" id="typeFile" class="form-control w-25 mx-3">
+                <option value=""></option>
+            </select>
+
+            <h3 class="h3 mx-2">Para</h3>
+
+            <select name="typeFile" id="typeFile" class="form-control w-25 mx-3">
+                <option value=""></option>
+            </select>
+        </div>
+
+        <input id="fileInput" type="file" class="form-control w-50 mx-auto my-5" accept="application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+
+        <div class="w-100 d-flex justify-content-center">
+            <input id="btn-convert" class="btn btn-outline-warning btn-lg w-25 py-3 " type="button" value="Converter">
+        </div>
+        <p id="result">
+            Result file:
+            <a id="resultLink" href=""></a>
+        </p>
+    </div>
+
+    <script src="https://unpkg.com/convertapi-js/lib/convertapi.js" defer="defer"></script>
+    <script src="index.js" defer="defer"></script>
+</body>
+</html>
