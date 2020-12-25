@@ -5,7 +5,8 @@
     let elResult = doc.getElementById('result');
     let elResultLink = doc.getElementById('resultLink');
     let typeFile = ['docx','pdf','pptx','txt','jpg'];
-
+    let y = 0;
+    
     elResult.style.display = 'none';
 
     win.onload = () => {
@@ -42,7 +43,7 @@
                     document.documentElement.style.cursor = 'default';
                     z++;
                 }else{
-                    if(ext === select[0].options[select[0].selectedIndex].value){
+                    if(ext === select[0].options[select[0].selectedIndex].value && y === 0){
                         try {
                 
                             // Converting DOCX to PDF file
@@ -62,7 +63,8 @@
                             } catch (err) {
                                 alert("Erro! Por favor tente novamente e/ou formatos para conversão incompatíveis");
                             } finally {
-                                document.documentElement.style.cursor = 'default'
+                                document.documentElement.style.cursor = 'default';
+                                y++;
                             }
                     }else{
                         if(select[0].value !== ext){
