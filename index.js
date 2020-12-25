@@ -42,7 +42,7 @@
                     document.documentElement.style.cursor = 'default';
                     z++;
                 }else{
-                    if(ext === select[0].options[select[0].selectedIndex].value){
+                    if(ext === select[0].options[select[0].selectedIndex].value && z !== 0){
                         try {
                 
                             // Converting DOCX to PDF file
