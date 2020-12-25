@@ -31,14 +31,14 @@
     
         if(file === undefined){
             alert("Por favor escolha um arquivo!");
-            document.documentElement.style.cursor = 'default'
+            document.documentElement.style.cursor = 'default';
         }else{
             ext = file.name.split('.').pop();
             let z =0;
 
             for(let x = 0; x < select.length; x++){
-                if(select[x].value === ''){
-                    z === 1 ? alert('Informe o formato do arquivo e/ou qual o formato que deseja converte-lo!'): '';
+                if(select[0].value === '' || select[1].value === ''){
+                    z !== 0 ? alert('Informe o formato do arquivo e/ou qual o formato que deseja converte-lo!'): '';
                     document.documentElement.style.cursor = 'default';
                     z++;
                 }else{
@@ -59,11 +59,16 @@
                             elResultLink.innerText = result.files[0].Url
                             elResultLink.click();
                     
+                            } catch (err) {
+                                alert("Erro! Por favor tente novamente e/ou formatos para conversão incompatíveis");
                             } finally {
                                 document.documentElement.style.cursor = 'default'
                             }
                     }else{
-                        z === 1 ? alert("O formato do documento upado não condiz com o escolhido!"): '';
+                        if(select[0].value !== ext){
+                            z !== 0 ? alert("O formato do documento upado não condiz com o escolhido!"): '';
+                            z++;
+                        };
                         document.documentElement.style.cursor = 'default';
                     }
                 }
